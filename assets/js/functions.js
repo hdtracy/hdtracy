@@ -1,3 +1,10 @@
+$('#header').load('/assets/html/header.html');
+$('#about').load('/assets/html/about.html');
+$('#work').load('/assets/html/work.html');
+$('#clients').load('/assets/html/clients.html');
+$('#footer').load('/assets/html/footer.html');
+
+
 function smoothScroll (duration) {
 	$('a[href^="#"]').on('click', function(event) {
 
@@ -24,8 +31,9 @@ function workBelt() {
 	});
 }
 
+
 $(function() {
-  	smoothScroll(300);
+  	smoothScroll(800);
   	workBelt();
 
  });
