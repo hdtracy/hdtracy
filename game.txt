@@ -1,0 +1,49 @@
+Let's make a game!
+  name:Idle Potions
+  by: HDT
+  desc: open your potions shop and create your masterpiece. Fulfill orders for clients for extra perks and to earn new recipes.
+  created: 12/02/2021
+  version:1
+  
+ 
+ 
+// DECLARE SETTINGS
+Settings
+  background:img/background.jpg
+  building cost increase: 110%
+  building cost refund: 50%
+  sprite sheet:icons, 48 by 48, img/sprites.png
+  style sheet: css/styling.css
+  
+  
+// SET LAYOUT OPTIONS
+Layout
+  use default
+  
+  
+// BUTTONS
+Buttons
+  *potionButton
+    name: Mix Potion
+    desc: Click to mix up a potion
+    on click:anim icon wobble
+    on click: yield 1 potion
+    on click: if (have goldenTouch and chance(1%)) yield 1 goldenPotion
+    icon: img/potion.png
+    
+    
+    
+// RESOURCES
+Resources
+  *potion|potions
+    name: Potion | Potions
+    desc: These are your potions. The more potions you mix, the faster you can afford new recipes.
+    icon: img/potion.png
+    class: noBackground
+    show earned
+    
+  *goldenPotion|goldenPotions
+    name: Golden Potion | Golden Potions
+    desc: Oo, it's shiny
+    class: noBackground
+    hidden when 0
