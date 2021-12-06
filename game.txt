@@ -18,25 +18,18 @@ Settings
   
 // SET LAYOUT OPTIONS
 Layout
-//use default
+use default
 
 
-
+  
+// RESOURCES
 Resources
-  //hidden resources
-  *TEMPLATE
-    always hidden
-//*res for tracking stuff
-  *buildingCount
-  *upgradeCount
-  *TEMPLATE
-    hidden when 0
-  *money
-    name:
-    desc:<b>About:</b></>This is money, the main resource. You want to collect as much of this as possible./* You should probably use a more unique description than this.  */
-    //req:
-    icon:
-  *specialRes
+
+  *potion|potions
+    name: Potion | Potions
+    desc: These are your potions. The more potions you mix, the faster you can afford new recipes.
+    icon: img/potion.png
+    show earned
 
 
 
@@ -46,22 +39,9 @@ Buttons
     desc:<b>Click Effect:</b></>Get money!<q>...</q>
     icon:
     on click:
-        //anim wobble
         yield 1 money
-        //other effects?
-    end
-    class:bigButton //hasFlares
-    tags:moneyButton
-/*
-  *Otherbutton
-    name:
-    desc:<b>Click Effect:</b></>...<q>...</q>
-    //req:
-    icon:
-    on click:
-    class:
-    tags:
-*/
+
+
 
 
 
@@ -72,13 +52,13 @@ Buildings
   *B
     name:
     desc:<b>Effect:</b></>...<q>...</q>
-    //req:
+
     cost:
-    //cost increase:
+
     icon:
     on tick:
         yield amount money
-        //yield other stuff or do something else
+
     end
 
 
@@ -120,8 +100,6 @@ Shinies
   *shiney
     icon:
     on click:
-       //effect
-       //log Some Shiny message
     end
     frequency:
     frequency variation:
