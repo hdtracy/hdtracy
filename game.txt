@@ -18,31 +18,116 @@ Settings
   
 // SET LAYOUT OPTIONS
 Layout
-  use default
-  
-  
-  
-// BUTTONS
-Buttons
-  *potionButton
-    name: Mix Potion
-    desc: Click to mix up a potion
-    on click:anim icon wobble
-    on click: yield 1 potion
-    on click: if (have goldenTouch and chance(1%)) yield 1 goldenPotion
-    icon: img/potion.png
-    
-    
-    
-// RESOURCES
+//use default
+
+
+
 Resources
-  *potion|potions
-    name: Potion | Potions
-    desc: These are your potions. The more potions you mix, the faster you can afford new recipes.
-    icon: img/potion.png
-    show earned
-    
-  *goldenPotion|goldenPotions
-    name: Golden Potion | Golden Potions
-    desc: Oo, it's shiny
+  //hidden resources
+  *TEMPLATE
+    always hidden
+//*res for tracking stuff
+  *buildingCount
+  *upgradeCount
+  *TEMPLATE
     hidden when 0
+  *money
+    name:
+    desc:<b>About:</b></>This is money, the main resource. You want to collect as much of this as possible./* You should probably use a more unique description than this.  */
+    //req:
+    icon:
+  *specialRes
+
+
+
+Buttons
+  *BigmoneyButton
+    name:
+    desc:<b>Click Effect:</b></>Get money!<q>...</q>
+    icon:
+    on click:
+        //anim wobble
+        yield 1 money
+        //other effects?
+    end
+    class:bigButton //hasFlares
+    tags:moneyButton
+/*
+  *Otherbutton
+    name:
+    desc:<b>Click Effect:</b></>...<q>...</q>
+    //req:
+    icon:
+    on click:
+    class:
+    tags:
+*/
+
+
+
+Buildings
+  *TEMPLATE
+    on click:anim glow
+    on earn:yield 1/this buildingCount
+  *B
+    name:
+    desc:<b>Effect:</b></>...<q>...</q>
+    //req:
+    cost:
+    //cost increase:
+    icon:
+    on tick:
+        yield amount money
+        //yield other stuff or do something else
+    end
+
+
+
+Upgrades
+    //Note about passive vs. on earn : passive effects are continuous and get applied every tick. On earn effects are 1 time. If you want to yield something, put it in on earn. If you want to multiply a production amount or keep something at a constant amount, put it in passive.
+  *TEMPLATE
+    always hidden
+    start with
+  //*hiddenUpgrade for setting default stats and general mangement
+  *TEMPLATE
+    on click:anim glow
+    on earn:yield upgradeCount
+  *U
+     name:
+     desc:<b>Effect:</b></>...<q>...</q>
+     req:
+     cost:
+     passive:
+         effect
+     end
+     on earn:
+         effect
+     end
+     icon:
+
+
+
+Achievements
+/*
+  *TEMPLATE
+  on earn:yield specialRes
+*/
+  *A
+     name:
+     desc:<b>Requirement:</b></>...<q>...</q>
+     req:
+Shinies
+  *shiney
+    icon:
+    on click:
+       //effect
+       //log Some Shiny message
+    end
+    frequency:
+    frequency variation:
+    movement:
+
+
+
+Items
+//These do lots of stuff. There is no good template for them
