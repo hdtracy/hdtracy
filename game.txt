@@ -13,12 +13,13 @@ Settings
   building cost increase: 110%
   building cost refund: 50%
   sprite sheet:icons, 48 by 48, img/sprites.png
-  style sheet: css/styling.css
+  
   
   
 // SET LAYOUT OPTIONS
 Layout
   use default
+  
   
   
 // BUTTONS
@@ -39,11 +40,9 @@ Resources
     name: Potion | Potions
     desc: These are your potions. The more potions you mix, the faster you can afford new recipes.
     icon: img/potion.png
-    class: noBackground
     show earned
     
   *goldenPotion|goldenPotions
     name: Golden Potion | Golden Potions
     desc: Oo, it's shiny
-    class: noBackground
     hidden when 0
