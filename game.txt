@@ -38,7 +38,9 @@ Buttons
     name:
     desc:<b>Click Effect:</b></>Get money!<q>...</q>
     icon:
-    on click:yield 1 potion
+    on click:
+      yield 1 potion
+    end
 
 
 
@@ -55,7 +57,9 @@ Buildings
     cost:
 
     icon:
-    on tick:yield amount potions
+    on tick:
+      yield amount potions
+    end
 
 
 
