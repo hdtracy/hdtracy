@@ -80,6 +80,7 @@ Achievements
   
 
 // SHINIES
+Shinies
 *luckyPotion
   name:Lucky Potion
   on click:yield (random(10,100)) potion
