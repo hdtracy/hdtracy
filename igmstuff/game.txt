@@ -71,14 +71,14 @@ Upgrades
 
 
 
-
+/*
 // ACHIEVEMENTS
 Achievements
 *10clicks
   name:Wowie! Ten whole clicks!
   desc:You've clicked the big red button 10 times. Well done. Well done indeed.
   req:10 potionButton:clicks
-  
+ */ 
   
 
 // SHINIES
