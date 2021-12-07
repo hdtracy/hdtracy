@@ -10,16 +10,19 @@ Let's make a game!
 // DECLARE SETTINGS
 Settings
   background:img/background.jpg
-  building cost increase: 110%
+  building cost increase: 112%
   building cost refund: 50%
-  sprite sheet:icons, 48 by 48, img/sprites.png
+  spritesheet:icons, 48 by 48, img/sprites.png
+  stylesheet:stuff/bigBlue.css
   
   
   
 // SET LAYOUT OPTIONS
 Layout
-//use default
-
+  use default
+  *achievs
+    in:main
+    contains:Achievements
 
 
 Resources
@@ -46,11 +49,10 @@ Buttons
     desc:<b>Click Effect:</b></>Get money!<q>...</q>
     icon:
     on click:
-        //anim wobble
+        anim wobble
         yield 1 money
-        //other effects?
     end
-    class:bigButton //hasFlares
+    class:bigButton hasFlares
     tags:moneyButton
 /*
   *Otherbutton
