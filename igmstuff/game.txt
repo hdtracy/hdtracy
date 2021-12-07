@@ -12,14 +12,18 @@ Settings
   background:img/background.jpg
   building cost increase: 110%
   building cost refund: 50%
-  sprite sheet:icons, 48 by 48, img/sprites.png
+  spritesheet:icons, 48 by 48, img/sprites.png
+  stylesheet:bigBlue.css
   
   
   
 // SET LAYOUT OPTIONS
 Layout
 use default
-
+*achievs
+    in:main
+    contains:Achievements
+    
 
   
 // RESOURCES
@@ -30,22 +34,30 @@ Resources
     desc: These are your potions. The more potions you mix, the faster you can afford new recipes.
     icon: img/potion.png
     show earned
+    class:bigButton hasFlares
+    
+    
+    
+   *spoon|spoons
+      name:Spoon|Spoons
+      desc:This looks useful
+      icon:img/potion.png
+      costs:3 potion
+      show earned
 
 
 
+// BUTTONS
 Buttons
-  *BigmoneyButton
-    name:
-    desc:<b>Click Effect:</b></>Get money!<q>...</q>
-    icon:
-    on click:
-      yield 1 potion
-    end
+  *potionButton
+    name:Potion Button
+    desc:Click Effect and get money!
+    on click:yield 1 potion
 
 
 
 
-
+//BUILDINGS
 Buildings
   *TEMPLATE
     on click:anim glow
@@ -62,50 +74,29 @@ Buildings
     end
 
 
-
+// UPGRADES
 Upgrades
-    //Note about passive vs. on earn : passive effects are continuous and get applied every tick. On earn effects are 1 time. If you want to yield something, put it in on earn. If you want to multiply a production amount or keep something at a constant amount, put it in passive.
-  *TEMPLATE
-    always hidden
-    start with
-  //*hiddenUpgrade for setting default stats and general mangement
-  *TEMPLATE
-    on click:anim glow
-    on earn:yield upgradeCount
-  *U
-     name:
-     desc:<b>Effect:</b></>...<q>...</q>
-     req:
-     cost:
-     passive:
-         effect
-     end
-     on earn:
-         effect
-     end
-     icon:
+*cookingClass
+  name:Cooking Class
+  desc:Learn to book, you
+  passive:multiply yield of potionButton by 2
+  cost:3 spoons
 
 
 
+
+// ACHIEVEMENTS
 Achievements
-/*
-  *TEMPLATE
-  on earn:yield specialRes
-*/
-  *A
-     name:
-     desc:<b>Requirement:</b></>...<q>...</q>
-     req:
-Shinies
-  *shiney
-    icon:
-    on click:
-    end
-    frequency:
-    frequency variation:
-    movement:
+*10clicks
+  name:Wowie! Ten whole clicks!
+  desc:You've clicked the big red button 10 times. Well done. Well done indeed.
+  req:10 bigButton:clicks
+  
+  
 
-
-
-Items
-//These do lots of stuff. There is no good template for them
+// SHINIES
+*luckyPotion
+  name:Lucky Potion
+  on click:yield (random(10,100)) spoon
+  movement:anywhere fade bounce moveRandom
+  frequency:15
