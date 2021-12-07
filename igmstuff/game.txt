@@ -9,7 +9,7 @@ Let's make a game!
  
 // DECLARE SETTINGS
 Settings
-  background:img/background.jpg
+  background:/img/background.jpg
   building cost increase: 110%
   building cost refund: 50%
   spritesheet:icons, 48 by 48, img/sprites.png
@@ -32,7 +32,7 @@ Resources
   *potion|potions
     name: Potion | Potions
     desc: These are your potions. The more potions you mix, the faster you can afford new recipes.
-    icon: img/potion.png
+    icon: ./img/potion.png
     show earned
     class:bigButton hasFlares
     start with:100
