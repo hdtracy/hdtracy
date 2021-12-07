@@ -83,5 +83,5 @@ Achievements
 *luckyPotion
   name:Lucky Potion
   on click:yield (random(10,100)) potion
-  movement:anywhere fade bounce moveRandom
+  movement:anywhere
   frequency:15
