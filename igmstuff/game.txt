@@ -35,17 +35,10 @@ Resources
     icon: img/potion.png
     show earned
     class:bigButton hasFlares
+    start with:100
     
     
     
-   *spoon|spoons
-      name:Spoon|Spoons
-      desc:This looks useful
-      icon:img/potion.png
-      costs:3 potion
-      show earned
-
-
 
 // BUTTONS
 Buttons
@@ -63,7 +56,7 @@ Buildings
   name:Cheesecake School
   desc:Learn to brew a cheesecake potion or something
   on tick:yield 3 potion
-  cost:100 spoons
+  cost:100 potion
 
 
 // UPGRADES
@@ -72,7 +65,7 @@ Upgrades
   name:Cooking Class
   desc:Learn to book, you
   passive:multiply yield of potionButton by 2
-  cost:3 spoons
+  cost:3 potion
 
 
 
@@ -89,6 +82,6 @@ Achievements
 // SHINIES
 *luckyPotion
   name:Lucky Potion
-  on click:yield (random(10,100)) spoon
+  on click:yield (random(10,100)) potion
   movement:anywhere fade bounce moveRandom
   frequency:15
