@@ -59,19 +59,11 @@ Buttons
 
 //BUILDINGS
 Buildings
-  *TEMPLATE
-    on click:anim glow
-    on earn:yield 1/this buildingCount
-  *B
-    name:
-    desc:<b>Effect:</b></>...<q>...</q>
-
-    cost:
-
-    icon:
-    on tick:
-      yield amount potions
-    end
+*cheesecakeSchool
+  name:Cheesecake School
+  desc:Learn to brew a cheesecake potion or something
+  on tick:yield 3 potion
+  cost:100 spoons
 
 
 // UPGRADES
