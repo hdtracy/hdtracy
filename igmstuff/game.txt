@@ -57,6 +57,8 @@ Buildings
   desc:Learn to brew a cheesecake potion or something
   on tick:yield 3 potion
   cost:100 potion
+  cost increase:110%
+  cost refund:50%
 
 
 
