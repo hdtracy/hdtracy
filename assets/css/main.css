@@ -669,3 +669,7 @@ h3 {
       color: #555; }
     .clients-belt .client-unit .quote-start path {
       fill: rgba(0, 0, 0, 0.2); }
+
+.smalltext {
+  color: white;
+}
